@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_04_234729) do
+ActiveRecord::Schema.define(version: 2019_07_05_045151) do
 
   create_table "apps", force: :cascade do |t|
     t.integer "user_id"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2019_07_04_234729) do
     t.text "exp"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "views", default: 0
   end
 
   create_table "replies", force: :cascade do |t|

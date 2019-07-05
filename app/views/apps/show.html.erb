@@ -1,6 +1,7 @@
 <% provide(:title, @app.title) %>
 
 <h1><%= link_to @app.title, @app.url, target: "_blank" %></h1>
+made by <%= User.find(@app.user_id).name %>
 
 <% if logged_in? %>
   <%= link_to "[編集]", "/apps/#{@app.id}/edit" %>

@@ -1,8 +1,15 @@
 <% provide(:title, "ALL Apps") %>
 <% provide(:h1, "全アプリ") %>
 
-<ul>
+<table>
+  <tr>
+    <td>アプリ名</td>
+    <td>製作者</td>
+  </tr>
   <% @apps.each do |app| %>
-    <li><%= link_to app.title, "/apps/#{app.id}" %></li>
+    <tr>
+      <td><%= link_to app.title, "/apps/#{app.id}" %></td>
+      <td><%= User.find(app.user_id).name %></td>
+    </tr>
   <% end %>
-</ul>
+</table>
