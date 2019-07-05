@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  # Replies
+  get '/send_replies/:app_id', to: 'replies#new'
+  post '/send_replies/:app_id', to: 'replies#create'
+  delete '/replies/destroy', to: 'replies#destroy'
   # Apps
   get '/apps/new', to: 'apps#new'
   get '/apps/:id', to: 'apps#show'
@@ -14,4 +18,6 @@ Rails.application.routes.draw do
   post '/signup', to: 'users#create'
   delete '/users/destroy/:id', to: 'users#destroy'
   patch '/users/update', to: 'users#update'
+  # Main
+  root 'apps#index'
 end
