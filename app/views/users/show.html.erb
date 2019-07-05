@@ -2,6 +2,8 @@
 <% provide(:h1, @user.name) %>
 
 <%= @user.name %>の作品
-<% @app.each do |app| %>
-  <%= link_to app.title, "/app/#{app.id}" %>
-<% end %>
+<ul>
+  <% @app.each do |app| %>
+    <li><%= link_to app.title, "/apps/#{app.id}" %></li>
+  <% end %>
+</ul>

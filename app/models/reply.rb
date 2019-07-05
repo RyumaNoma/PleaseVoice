@@ -1,5 +1,5 @@
 class Reply < ApplicationRecord
-  validates :app_id, presenece: true
-  validates :content, presenece: true
-  validates :user_name, presenece: true
+  validates :app_id, presence: true
+  validates :content, presence: true
+  validates :user_name, presence: true
 end

@@ -5,6 +5,8 @@ class RepliesController < ApplicationController
 
   def create
     @reply = Reply.new(reply_params)
+    @reply.app_id = params[:app_id]
+    @reply.user_name = current_user.name
 
     if @reply.save
       redirect_to "/apps/#{@reply.app_id}"
@@ -25,6 +27,6 @@ class RepliesController < ApplicationController
   private
 
   def reply_params
-    params.requrie(:reply).permit(:app_id, :user_name, :content)
+    params.require(:reply).permit(:app_id, :user_name, :content)
   end
 end

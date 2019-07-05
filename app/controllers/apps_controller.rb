@@ -9,11 +9,12 @@ class AppsController < ApplicationController
 
   def create
     @app = App.new(app_params)
+    @app.user_id = current_user.id
 
     if @app.save
       redirect_to "/apps/#{@app.id}"
     else
-      flash[:error] = "入力に不備があります"
+      flash.now[:error] = "入力に不備があります"
       render 'new'
     end
   end
@@ -48,11 +49,14 @@ class AppsController < ApplicationController
   end
 
   def update
+    puts "============="
+    puts params
+    puts "============="
     @app = App.find(params[:id])
 
-    @app.title = params[:title]
-    @app.url = params[:url]
-    @app.exp = params[:exp]
+    @app.title = params[:app][:title]
+    @app.url = params[:app][:url]
+    @app.exp = params[:app][:exp]
 
     @app.save
 

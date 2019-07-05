@@ -10,7 +10,13 @@
   </head>
 
   <body>
+    <%= render 'shared/header' %>
     <h1><%= yield(:h1) %></h1>
+    <% flash.each do |msg_type, msg| %>
+      <div class="flash-<%=msg_type %>"> 
+        <%= msg %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

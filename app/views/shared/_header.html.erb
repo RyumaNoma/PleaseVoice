@@ -1,0 +1,10 @@
+<%= link_to "全アプリ", "/apps" %>
+<% if logged_in? %>
+  <%= link_to "ログアウト", "/logout", method: :delete %>
+  <%= link_to "投稿", "/apps/new" %>
+  <%= link_to "プロフィール", "/users/#{current_user.id}" %>
+  <%= link_to "プロフィール変更", "/users/edit" %>
+<% else %>
+  <%= link_to "ログイン", "/login" %>
+  <%= link_to "登録", "/signup" %>
+<% end %>
