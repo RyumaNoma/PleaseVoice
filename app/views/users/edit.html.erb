@@ -1,7 +1,7 @@
-<% provide(:title, "Sign up") %>
-<% provide(:h1, "アカウント作成") %>
+<% provide(:title, "Edit") %>
+<% provide(:h1, "アカウント情報更新") %>
 
-<%= form_for(@user, url: '/signup') do |f| %>
+<%= form_for(:user, url: "/users/update/#{current_user.id}") %>
   <div>
     <%= f.label :name, "名前" %>
   </div>
@@ -21,5 +21,5 @@
     <%= f.password_field :password_confirmation %>
   </div>
 
-  <%= f.submit "アカウント作成" %>
+  <%= f.submit "アカウント情報更新" %>
 <% end %>

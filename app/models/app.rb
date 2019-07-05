@@ -1,6 +1,6 @@
 class App < ApplicationRecord
-  validates :user_id, presenece: true
-  validates :title, presenece: true
-  validates :url, presenece: true
-  validates :exp, presenece: true
+  validates :user_id, presence: true
+  validates :title, presence: true
+  validates :url, presence: true
+  validates :exp, presence: true
 end

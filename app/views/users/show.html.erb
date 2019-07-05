@@ -1,0 +1,7 @@
+<% provide(:title, @user.name) %>
+<% provide(:h1, @user.name) %>
+
+<%= @user.name %>の作品
+<% @app.each do |app| %>
+  <%= link_to app.title, "/app/#{app.id}" %>
+<% end %>

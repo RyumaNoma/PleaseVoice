@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
-  get 'users/new'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # Users
+  get '/signup', to: 'users#new'
+  get '/users/:id', to: 'users#show'
+  get '/users/edit', to: 'users#edit'
+  post '/signup', to: 'users#create'
+  delete '/users/destroy/:id', to: 'users#destroy'
+  patch '/users/update', to: 'users#update'
 end
