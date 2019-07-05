@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # Replies
   get '/send_replies/:app_id', to: 'replies#new'
   post '/send_replies/:app_id', to: 'replies#create'
-  delete '/replies/destroy', to: 'replies#destroy'
+  patch '/replies/destroy', to: 'replies#destroy'
   # Apps
   get '/apps/new', to: 'apps#new'
   get '/apps/:id', to: 'apps#show'

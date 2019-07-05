@@ -1,2 +1,13 @@
-<h1>Replies#new</h1>
-<p>Find me in app/views/replies/new.html.erb</p>
+<% provide(:title, "Send Reply") %>
+<% provide(:h1, "返信") %>
+
+<%= form_for(@reply, url: "/reply/new/#{params[:app_id]}") do |f| %>
+  <div>
+    <%= f.label :content, "メッセージ" %>
+  </div>
+  <div>
+    <%= f.text_area :content %>
+  </div>
+
+  <%= f.submit "返信" %>
+<% end %>
