@@ -1,0 +1,6 @@
+<% provide(:title, "ALL Apps") %>
+<% provide(:h1, "全アプリ") %>
+
+<% @apps.each do |app| %>
+  <%= link_to app.title, "/apps/#{app.id}" %>
+<% end %>
