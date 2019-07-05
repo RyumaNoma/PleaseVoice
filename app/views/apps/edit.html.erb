@@ -1,0 +1,25 @@
+<% provide(:title, "Edit") %>
+<% provide(:h1, "編集") %>
+
+<% form_for(@app, url: "/app/edit/#{current_user.id}") do |f| %>
+  <div>
+    <%= f.label :title, "タイトル" %>
+  </div>
+  <div>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :url, "URL" %>
+  </div>
+  <div>
+    <%= f.text_field :url %>
+  </div>
+  <div>
+    <%= f.label :exp, "説明" %>
+  </div>
+  <div>
+    <%= f.text_area :exp %>
+  </div>
+
+  <%= f.submit "編集" %>
+<% end %>

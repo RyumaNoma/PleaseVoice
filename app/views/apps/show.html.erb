@@ -1,0 +1,7 @@
+<% provide(:title, @app.title) %>
+<% provide(:h1, @app.title) %>
+
+<% @reply.each do |reply| %>
+  <%= reply.user_name %><br>
+  <%= reply.content %>
+<% end %>

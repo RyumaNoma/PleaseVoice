@@ -1,0 +1,25 @@
+<% provide(:title, "New App") %>
+<% provide(:h1, "アプリ投稿") %>
+
+<% form_for(@app, url: '/app/new') do |f| %>
+  <div>
+    <%= f.label :title, "タイトル" %>
+  </div>
+  <div>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :url, "URL" %>
+  </div>
+  <div>
+    <%= f.text_field :url %>
+  </div>
+  <div>
+    <%= f.label :exp, "説明" %>
+  </div>
+  <div>
+    <%= f.text_area :exp %>
+  </div>
+
+  <%= f.submit "投稿" %>
+<% end %>
