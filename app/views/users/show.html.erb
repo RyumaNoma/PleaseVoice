@@ -2,8 +2,15 @@
 <% provide(:h1, @user.name) %>
 
 <%= @user.name %>の作品
-<ul>
+<table>
+  <tr>
+    <td>アプリ名</td>
+    <td>閲覧数</td>
+  </tr>
   <% @app.each do |app| %>
-    <li><%= link_to app.title, "/apps/#{app.id}" %></li>
+    <tr>
+      <td><%= link_to app.title, "/apps/#{app.id}" %></td>
+      <td><%= app.views %></td>
+    </tr>
   <% end %>
-</ul>
+</table>

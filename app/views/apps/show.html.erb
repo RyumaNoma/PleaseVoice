@@ -18,6 +18,8 @@ made by <%= User.find(@app.user_id).name %>
     <% end %>
 </div>
 
+<div>コメント</div>
+
 <% @reply.each do |reply| %>
   <div>
     <%= reply.user_name %><br>

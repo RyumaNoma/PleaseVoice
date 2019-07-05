@@ -24,5 +24,5 @@ Rails.application.routes.draw do
   delete '/users/destroy/:id', to: 'users#destroy'
   patch '/users/update', to: 'users#update'
   # Main
-  root 'apps#index'
+  root 'main#lp'
 end
