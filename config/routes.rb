@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  # Sessions
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
   # Replies
   get '/send_replies/:app_id', to: 'replies#new'
   post '/send_replies/:app_id', to: 'replies#create'

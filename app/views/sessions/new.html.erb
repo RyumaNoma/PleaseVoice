@@ -1,0 +1,19 @@
+<% provide(:title, "Log in") %>
+<% provide(:h1, "ログイン") %>
+
+<%= form_for(:session, url: '/login') do |f| %>
+  <div>
+    <%= f.label :name, "名前" %>
+  </div>
+  <div>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :password, "パスワード" %>
+  </div>
+  <div>
+    <%= f.password_field :password %>
+  </div>
+
+  <%= f.submit "ログイン" %>
+<% end %>
