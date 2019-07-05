@@ -1,6 +1,8 @@
 class AppsController < ApplicationController
   def index
     @apps = App.all
+
+    @apps = @apps.sort{ |a, b| a.views <=> b.views }
   end
 
   def new

@@ -10,6 +10,10 @@ class RepliesController < ApplicationController
 
     if @reply.save
       redirect_to "/apps/#{@reply.app_id}"
+
+      @app = App.find(params[:app_id])
+      @app.views += 1
+      @app.save
     else
       flash[:error] = "入力に不備があります"
       render 'new'

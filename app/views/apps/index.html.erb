@@ -4,11 +4,13 @@
 <table>
   <tr>
     <td>アプリ名</td>
+    <td>閲覧数</td>
     <td>製作者</td>
   </tr>
   <% @apps.each do |app| %>
     <tr>
       <td><%= link_to app.title, "/apps/#{app.id}" %></td>
+      <td><%= app.views %></td>
       <td><%= User.find(app.user_id).name %></td>
     </tr>
   <% end %>
