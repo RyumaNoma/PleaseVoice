@@ -1,7 +1,7 @@
 <% provide(:title, "Log in") %>
 <% provide(:h1, "ログイン") %>
 
-<%= form_for(:session, url: '/login') do |f| %>
+<%= form_for(:session, url: '/login', :html => {:class => 'form'}) do |f| %>
   <div>
     <%= f.label :name, "名前" %>
   </div>

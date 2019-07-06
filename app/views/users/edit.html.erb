@@ -4,7 +4,7 @@
 <%= render 'shared/user_error' %>
 
 <% if logged_in? %>
-  <%= form_for(:user, url: "/users/update", method: :patch) do |f| %>
+  <%= form_for(:user, url: "/users/update", method: :patch, :html => {:class => 'form'}) do |f| %>
     <div>
       <%= f.label :name, "名前" %>
     </div>

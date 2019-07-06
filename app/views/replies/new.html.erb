@@ -1,7 +1,7 @@
 <% provide(:title, "Send Reply") %>
 <% provide(:h1, "返信") %>
 
-<%= form_for(@reply, url: "/send_reply/#{params[:app_id]}") do |f| %>
+<%= form_for(@reply, url: "/send_reply/#{params[:app_id]}", :html => {:class => 'form'}) do |f| %>
   <div>
     <%= f.label :content, "メッセージ" %>
   </div>

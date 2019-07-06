@@ -3,7 +3,7 @@
 
 <%= render 'shared/user_error' %>
 
-<%= form_for(@user, url: '/signup') do |f| %>
+<%= form_for(@user, url: '/signup', :html => {:class => 'form'}) do |f| %>
   <div>
     <%= f.label :name, "名前" %>
   </div>
