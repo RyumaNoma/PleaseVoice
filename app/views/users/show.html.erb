@@ -2,11 +2,9 @@
 <% provide(:h1, @user.name) %>
 
 <% if logged_in? && current_user.admin %>
-  アカウント数：
-  アプリ数：
-  総リプライ数：
-
-  Landing Pageアクセス数：
+  ユーザー数：<%= @all_user %><br>
+  アプリ数：<%= @all_app %><br>
+  総リプライ数：<%= @all_reply %>
 <% else %>
   <table>
     <tr class="first-tr">
