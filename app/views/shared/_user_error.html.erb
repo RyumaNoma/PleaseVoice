@@ -1,7 +1,7 @@
 <% if @user.errors.any? %>
-  <ul>
+  <div class="errors">
     <% @user.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+      <div class="list">・<%= msg %></div>
     <% end %>
-  </ul>
+  </div>
 <% end %>

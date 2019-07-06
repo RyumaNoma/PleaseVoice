@@ -1,16 +1,23 @@
 <% provide(:title, @user.name) %>
 <% provide(:h1, @user.name) %>
 
-<div>作品</div>
-<table>
-  <tr>
-    <td>アプリ名</td>
-    <td>閲覧数</td>
-  </tr>
-  <% @app.each do |app| %>
-    <tr>
-      <td><%= link_to app.title, "/apps/#{app.id}" %></td>
-      <td><%= app.views %></td>
+<% if logged_in? && current_user.admin %>
+  アカウント数：
+  アプリ数：
+  総リプライ数：
+
+  Landing Pageアクセス数：
+<% else %>
+  <table>
+    <tr class="first-tr">
+      <td>アプリ名</td>
+      <td>リプライ数</td>
     </tr>
-  <% end %>
-</table>
+    <% @app.each do |app| %>
+      <tr>
+        <td><%= link_to app.title, "/apps/#{app.id}" %></td>
+        <td><%= app.views %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>

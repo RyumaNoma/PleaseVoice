@@ -1,10 +1,9 @@
 <% if @app.errors.any? %>
-  <ul>
+  <div class="errors">
     <% @app.errors.full_messages.each do |msg| %>
-      <li>
         <% msg = msg.sub(/Exp/, 'Explain') %>
-        <%= msg %>
-      </li>
+        <% msg = msg.sub(/Url/, 'URL') %>
+        <div class="list">・<%= msg %></div>
     <% end %>
-  </ul>
+  </div>
 <% end %>

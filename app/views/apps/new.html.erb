@@ -1,11 +1,9 @@
 <% provide(:title, "New App") %>
 <% provide(:h1, "アプリ投稿") %>
 
-<%= form_for(@app, url: '/apps/new', :html => {:class => 'form'}) do |f| %>
-  <div>
-    <%= render 'shared/app_error' %>
-  </div>
+<%= render 'shared/app_error' %>
 
+<%= form_for(@app, url: '/apps/new', :html => {:class => 'form'}) do |f| %>
   <div>
     <%= f.label :title, "タイトル" %>
   </div>

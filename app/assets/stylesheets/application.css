@@ -49,23 +49,37 @@
   color: #1dad29;
   border: solid 3px #1dad29;
   border-radius: 5px;
-  display:inline-block;
 
   background-color: #74fc7f;
+
+  width: 30%;
+  text-align: center;
+  margin: 0 auto;
  }
 
  .flash-error{
   font-size: 1.2em;
   font-weight: bold;
-
   color: #d90d0d;
+
   border: solid 3px #d90d0d;
   border-radius: 5px;
-  display:inline-block;
 
   background-color: #f06e9c;
+
+  width: 30%;
+  text-align: center;
+  margin: 0 auto;
  }
 
  h1{
    text-align: center;
+ }
+
+ a{
+   text-decoration: none;
+ }
+
+ a:hover{
+   text-decoration: underline;
  }
