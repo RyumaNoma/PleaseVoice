@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   def show
     # for admin
     @all_user = User.all.size - 1
-    @all_app = App.all.size - 1
+    @all_app = App.all.size
     @all_reply = Reply.all.size
 
     @user = User.find(params[:id])
