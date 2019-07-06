@@ -1,3 +1,41 @@
 // Place all the styles related to the Apps controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.all{
+  text-align: center;
+  width: 40%;
+  margin: 0 auto;
+
+  word-wrap: break-word;
+}
+
+.reply{
+  text-align: left;
+}
+
+.title{
+  font-size: 1.2em;
+
+  text-align: center;
+
+  width: 11em;
+  background-color: #cacccc;
+
+  border: solid 1px #cacccc;
+}
+
+.exp{
+  text-align: left;
+  border: solid 1px #cacccc;
+  border-radius: 5px;
+}
+
+.name{
+  background-color: #d0c2ed;
+
+  display: inline-block;
+}
+
+.strong{
+  font-weight: bold;
+}

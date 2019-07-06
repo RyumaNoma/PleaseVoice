@@ -17,7 +17,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    user = User.find(params[:id])
+    user = User.find(current_user.id)
+
+    log_out
 
     App.all.each do |app|
       if app.user_id == user.id

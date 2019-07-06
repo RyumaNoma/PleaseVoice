@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get '/users/:id', to: 'users#show'
   get '/users/edit', to: 'users#edit'
   post '/signup', to: 'users#create'
-  delete '/users/destroy/:id', to: 'users#destroy'
+  delete '/users/destroy', to: 'users#destroy'
   patch '/users/update', to: 'users#update'
   # Main
   root 'main#lp'

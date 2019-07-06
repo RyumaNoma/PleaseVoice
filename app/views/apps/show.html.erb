@@ -1,32 +1,44 @@
 <% provide(:title, @app.title) %>
 
 <h1><%= link_to @app.title, @app.url, target: "_blank" %></h1>
-made by <%= User.find(@app.user_id).name %>
 
-<% if logged_in? && @app.user_id == current_user.id %>
-  <%= link_to "[編集]", "/apps/#{@app.id}/edit" %>
-  <%= link_to "[削除]", "/apps/destroy/#{@app.id}", method: :delete, data: { confirm: "本当に削除しますか" } %>
-<% end %>
+<div class="all">
+    made by <span class="strong"><%= link_to User.find(@app.user_id).name, "/users/#{User.find(@app.user_id).id}" %></span>
 
-<div>
-  説明：<%= @app.exp %>
-</div>
-
-<div>
-  <% if logged_in? %>
-    <%= link_to "[Send Reply]", "/send_reply/#{@app.id}" %>
+    <% if logged_in? && @app.user_id == current_user.id %>
+      <%= link_to "[編集]", "/apps/#{@app.id}/edit" %>
+      <%= link_to "[削除]", "/apps/destroy/#{@app.id}", method: :delete, data: { confirm: "本当に削除しますか" } %>
     <% end %>
-</div>
+    <br>
 
-<div>コメント</div>
-
-<% @reply.each do |reply| %>
-  <div>
-    <%= reply.user_name %><br>
-    <%= reply.content %>
-
-    <% if logged_in? && reply.user_name == current_user.name %>
-      <%= link_to "[DELETE]", "/replies/destroy/#{reply.id}", method: :patch, data: { confirm: "本当に削除しますか" } %>
-    <% end %>
+    <div class="title">説明</div>
+  <div class="exp">
+    <%= @app.exp %>
   </div>
-<% end %>
+
+  <div class="reply">
+    <div class="title">
+      コメント
+
+      <% if logged_in? %>
+        <%= link_to "[Send Reply]", "/send_reply/#{@app.id}" %>
+      <% end %>
+    </div>
+
+    <div class="exp">
+      <% @reply.each do |reply| %>
+        <div>
+          <div class="name"><%= reply.user_name %></div>
+          
+          <% if logged_in? && reply.user_name == current_user.name %>
+            <%= link_to "[DELETE]", "/replies/destroy/#{reply.id}", method: :patch, data: { confirm: "本当に削除しますか" } %>
+          <% end %>
+          
+          <br>
+
+          <%= reply.content %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
