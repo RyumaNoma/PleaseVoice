@@ -13,12 +13,18 @@ class AppsController < ApplicationController
 
   def create
     @app = App.new(app_params)
-    @app.user_id = current_user.id
 
-    if @app.save
-      redirect_to "/apps/#{@app.id}"
+    if logged_in?
+      @app.user_id = current_user.id
+
+      if @app.save
+        redirect_to "/apps/#{@app.id}"
+      else
+        flash.now[:error] = "入力に不備があります"
+        render 'new'
+      end
     else
-      flash.now[:error] = "入力に不備があります"
+      flash.now[:error] = "ログインしてください"
       render 'new'
     end
   end

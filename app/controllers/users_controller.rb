@@ -55,17 +55,23 @@ class UsersController < ApplicationController
 
   def update
     puts params
-    @user = User.find(current_user.id)
 
-    @user.name = params[:user][:name]
-    @user.password = params[:user][:password]
-    @user.password_confirmation = params[:user][:password_confirmation]
+    if logged_in?
+      @user = User.find(current_user.id)
 
-    if @user.save
-      flash[:success] = "アカウント情報を更新しました"
-      redirect_to "/users/#{@user.id}"
+      @user.name = params[:user][:name]
+      @user.password = params[:user][:password]
+      @user.password_confirmation = params[:user][:password_confirmation]
+
+      if @user.save
+        flash[:success] = "アカウント情報を更新しました"
+        redirect_to "/users/#{@user.id}"
+      else
+        flash[:error] = "入力に不備があります"
+        render 'edit'
+      end
     else
-      flash[:error] = "入力に不備があります"
+      flash[:error] = "ログインしてください"
       render 'edit'
     end
   end
