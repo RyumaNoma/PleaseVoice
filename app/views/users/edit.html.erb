@@ -1,27 +1,29 @@
 <% provide(:title, "Edit") %>
-<% provide(:h1, "アカウント情報更新") %>
+<% provide(:h1, "プロフィール変更") %>
+
+<%= render 'shared/user_error' %>
 
 <% if logged_in? %>
-  <%= form_for(:user, url: "/users/update/#{current_user.id}") do |f| %>
+  <%= form_for(:user, url: "/users/update", method: :patch) do |f| %>
     <div>
       <%= f.label :name, "名前" %>
     </div>
     <div>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, value: current_user.name %>
     </div>
     <div>
-      <%= f.label :password, "パスワード" %>
+      <%= f.label :password, "新パスワード" %>
     </div>
     <div>
       <%= f.password_field :password %>
     </div>
     <div>
-      <%= f.label :password_confirmation, "パスワード確認入力" %>
+      <%= f.label :password_confirmation, "新パスワード確認入力" %>
     </div>
     <div>
       <%= f.password_field :password_confirmation %>
     </div>
 
-    <%= f.submit "アカウント情報更新" %>
+    <%= f.submit "プロフィール変更" %>
   <% end %>
 <% end %>

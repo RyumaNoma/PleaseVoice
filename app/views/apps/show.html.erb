@@ -5,7 +5,7 @@ made by <%= User.find(@app.user_id).name %>
 
 <% if logged_in? %>
   <%= link_to "[編集]", "/apps/#{@app.id}/edit" %>
-  <%= link_to "[削除]", "/apps/destroy/#{@app.id}", method: :delete %>
+  <%= link_to "[削除]", "/apps/destroy/#{@app.id}", method: :delete, data: { confirm: "本当に削除しますか" } %>
 <% end %>
 
 <div>
@@ -26,7 +26,7 @@ made by <%= User.find(@app.user_id).name %>
     <%= reply.content %>
 
     <% if logged_in? && reply.user_name == current_user.name %>
-      <%= link_to "[DELETE]", "/replies/destroy/#{reply.id}", method: :patch %>
+      <%= link_to "[DELETE]", "/replies/destroy/#{reply.id}", method: :patch, data: { confirm: "本当に削除しますか" } %>
     <% end %>
   </div>
 <% end %>

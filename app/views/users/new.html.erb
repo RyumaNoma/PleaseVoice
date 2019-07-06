@@ -1,6 +1,8 @@
 <% provide(:title, "Sign up") %>
 <% provide(:h1, "アカウント作成") %>
 
+<%= render 'shared/user_error' %>
+
 <%= form_for(@user, url: '/signup') do |f| %>
   <div>
     <%= f.label :name, "名前" %>

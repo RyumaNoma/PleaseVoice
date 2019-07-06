@@ -2,7 +2,7 @@
 <% provide(:h1, "編集") %>
 
 <% if logged_in? %>
-  <%= form_for(@app, url: "/apps/#{current_user.id}/edit", method: :patch) do |f| %>
+  <%= form_for(@app, url: "/apps/#{@app.id}/edit", method: :patch) do |f| %>
     <div>
       <%= f.label :title, "タイトル" %>
     </div>
